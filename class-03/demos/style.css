@@ -1,0 +1,29 @@
+body > h1 {
+  margin-top: 0px;
+}
+
+h1 {
+  border-top: 10px solid salmon;
+  background-color: #201d6430;
+  margin-top: 86px;
+  padding-top: 15px;
+}
+
+p:first-of-type {
+
+  /* border: solid red 10px solid blue 20px; */
+  /* border: 9px 6px 3px 0 solid red; */
+  border-left: 200px solid brown;
+  padding: 0 20px 30px 40px;
+  /* order of operations is top right bottom left */
+  /* TRBL */
+  margin: 50px 200px 75px;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+p {
+  display: inline-block;
+  max-width: 350px;
+}
+
