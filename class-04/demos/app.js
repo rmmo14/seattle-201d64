@@ -82,4 +82,21 @@ function askMovieQuestion() {
   var favoriteMovie = prompt('What is your favorite movie?');
   alert(favoriteMovie);
 }
+
+function sum(num1, potato){
+  console.log('The string of sum:', num1 + potato);
+  return num1 + potato;
+}
+
+// ===========FUNCTION INVOCATIONS===================
+
+sum(9, 7);
+console.log('The sum of 9 and 7 is: ' + sum(9, 7));
+
+var anotherNumber = sum(4, 5);
+var coolNumber = sum(40, 2);
+console.log('Nums:', anotherNumber, coolNumber);
+
+var biggerNumber = sum(anotherNumber, coolNumber);
+console.log('BiggerNumber:', biggerNumber);
 askMovieQuestion();
