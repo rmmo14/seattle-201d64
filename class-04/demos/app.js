@@ -78,5 +78,8 @@ greeting2('Richard');
 
 // countPets(3, 'cat and bird and turtle'); // the values passed in are called arguments
 // countPets('cat and bird and turtle', 3);
-
-
+function askMovieQuestion() {
+  var favoriteMovie = prompt('What is your favorite movie?');
+  alert(favoriteMovie);
+}
+askMovieQuestion();
