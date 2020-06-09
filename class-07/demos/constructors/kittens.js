@@ -45,32 +45,91 @@ function renderCat() {
 
 }
 
-var snowdropTheCat = {
-  name : 'Snowdrop',
-  picture: 'jenskitten.jpg',
-  kittensPlayedWithEachDay: [0, 21, 2, 0, 9],// This needs to be random in your lab
-  unorderedListId: 'snowdrops-ul',
-  renderToPage : renderCat
-};
+function renderCatInTable(){
+  // have a target
+  var table = document.getElementById('kitten-table');
+  // make a new element
+  // things that go in tables are rows
+  var tableRow = document.createElement('tr');
+  // give it content
+  // the content for a table row IS : a td
 
-var ollieTheCat = {
-  name : 'Ollie',
-  picture : 'olliecat.jpg',
-  kittensPlayedWithEachDay : [1, 1, 1, 32, 32],
-  unorderedListId: 'ollie-ul',
-  renderToPage : renderCat
-};
+  // ===============2.5 for a row
+  //    step 1. have a parent: tableRow
+  //    step 2. create an element: td
+  var tableCell = document.createElement('td');
+  //    2.5 content : the cat name
+  tableCell.textContent = this.name;
+  //    3. append it to parent
+  tableRow.appendChild(tableCell);
+  // =============== 2.5 for row is done
 
-var felixTheCat = {
-  name: 'felix',
-  picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Felix_the_cat.svg/1200px-Felix_the_cat.svg.png',
-  kittensPlayedWithEachDay: [100, 2000, 3, 9090, 2],
-  unorderedListId: 'felix-ul',
-  renderToPage: renderCat
-};
+  for(var i = 0; i < this.kittensPlayedWithEachDay.length; i++){
+
+    tableCell = document.createElement('td');
+    tableCell.textContent = this.kittensPlayedWithEachDay[i];
+    tableRow.appendChild(tableCell);
+  }
+
+  //3 FOR ROW.  append it
+  table.appendChild(tableRow);
+
+}
+
+function Cat(catsName, imgSrc, playArray, unorderedListId){
+  this.name = 'Super-' + catsName;
+  this.picture = imgSrc;
+  this.kittensPlayedWithEachDay = playArray;
+  this.unorderedListId = unorderedListId;
+  this.cute = true;
+  this.barcode = 11010100010100101;
+}
+
+// prototype is only used with constructor functions
+Cat.prototype.renderToPage = renderCat;
+
+Cat.prototype.renderCatInTable = renderCatInTable;
 
 
 
-snowdropTheCat.renderToPage();
-ollieTheCat.renderToPage();
-felixTheCat.renderToPage();
+var snowdrop = new Cat('snowdrop', 'jenskitten.jpg', [0, 21, 2, 0, 9], 'snowdrops-ul');
+var ollie = new Cat('ollie', 'olliecat.jpg', [1, 1, 1, 32, 32], 'ollie-ul');
+var felix = new Cat('FELIX', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Felix_the_cat.svg/1200px-Felix_the_cat.svg.png', [0, 21, 2, 0, 9], 'felix-ul');
+
+snowdrop.renderToPage();
+ollie.renderToPage();
+felix.renderToPage();
+
+snowdrop.renderCatInTable();
+ollie.renderCatInTable();
+felix.renderCatInTable();
+
+// var snowdropTheCat = {
+//   name : 'Snowdrop',
+//   picture: 'jenskitten.jpg',
+//   kittensPlayedWithEachDay: [0, 21, 2, 0, 9],// This needs to be random in your lab
+//   unorderedListId: 'snowdrops-ul',
+//   renderToPage : renderCat
+// };
+
+// var ollieTheCat = {
+//   name : 'Ollie',
+//   picture : 'olliecat.jpg',
+//   kittensPlayedWithEachDay : [1, 1, 1, 32, 32],
+//   unorderedListId: 'ollie-ul',
+//   renderToPage : renderCat
+// };
+
+// var felixTheCat = {
+//   name: 'felix',
+//   picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Felix_the_cat.svg/1200px-Felix_the_cat.svg.png',
+//   kittensPlayedWithEachDay: [100, 2000, 3, 9090, 2],
+//   unorderedListId: 'felix-ul',
+//   renderToPage: renderCat
+// };
+
+// snowdropTheCat.renderToPage();
+// ollieTheCat.renderToPage();
+// felixTheCat.renderToPage();
+
+
