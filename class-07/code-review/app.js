@@ -1,12 +1,12 @@
 'use strict';
 
 /*
-  this. for random number generator did not work
+  this. for random number generator did not work // because it was a function that was not a method of our obkect
   getting the total sum of cookies for the day, especially within the object
-  sales.html being weird with cs unescaped < sign
-  naming variables - which should be unique, which can be reused
+  naming variables - which should be unique, which can be reused// all object should share the same keys if they represent the same model
   one store works, duplicating was difficult - make this as painless as possible
-*/
+  appending: display name above the list // make sure it has somewhere to live
+  */
 
 
 /*
@@ -39,33 +39,93 @@ invoke the functions
 */
 // min - max - avg
 
-var openHourTimes = ['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+var openHourTimes = ['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
+
+function randomizer(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function calculateCustomersOncePotato() {
+  // get the customers
+  var customers = randomizer(this.minNumCustomers, this.maxNumCustomers);
+  // return it
+  return customers;
+}
+
+function calculateCookiesAllHours() {
+  for (var i = 0; i < openHourTimes.length; i++) {
+    var cookies = Math.ceil(this.calculateCustomersOnce() * this.avgNumCookies);
+    this.cookiesSold.push(cookies); //.push adds to the end of an array
+    // this.cookiesSold[i] = cookies;
+  }
+}
+
+function renderStore(unorderdListId) {
+  // put the text somewhere
+
+
+  var unorderedList = document.getElementById(unorderdListId);
+
+  for (var i = 0; i < openHourTimes.length; i++) {
+
+    var listItem = document.createElement('li');
+    listItem.textContent = openHourTimes[i] + ' ' + this.cookiesSold[i] + ' cookies';
+    unorderedList.appendChild(listItem);
+  }
+
+  // now render the total as a list item
+
+  // var divPotato = document.getElementById('seattle-name');
+  // var p = document.createElement('p');
+  // p.textContent = this.name;
+  // divPotato.appendChild(p);
+
+  var nameP = document.getElementById(this.paragraphId);
+  nameP.textContent = this.name;
+
+}
+
+function totalTheCookies(){
+  var total = 0;
+  // iterate through the cookies and add them to the total
+  return total;
+}
 
 var seattleStore = {
   minNumCustomers : 20,
   maxNumCustomers : 60,
   avgNumCookies : 3.5,
   cookiesSold : [],
-  calculateCustomersOnce: function(){
-    // get the customers
-    var customers = randomizer(this.minNumCustomers, this.maxNumCustomers);
-    // return it
-    return customers;
-  },
-  calculateCookiesAllHours : function(){
-    for(var i = 0; i < openHourTimes.length; i++){
-      var cookies = Math.ceil(this.calculateCustomersOnce() * this.avgNumCookies);
-      this.cookiesSold.push(cookies); //.push adds to the end of an array
-      // this.cookiesSold[i] = cookies;
-    }
-  }
+  name: 'Seattle',
+  paragraphId : 'seattle-name-p',
+
+  calculateCustomersOnce: calculateCustomersOncePotato, // assigning the key calcCustomersOnce the value of the function calculateCustomersOncePotato
+  calculateCookiesAllHours : calculateCookiesAllHours,
+  renderStore : renderStore,
+  totalTheCookies : totalTheCookies
 };
 
+var tokyoStore = {
+  minNumCustomers: 1,
+  maxNumCustomers: 2,
+  avgNumCookies: 3,
+  cookiesSold: [],
+  name: 'Tokyo',
+  paragraphId : 'tokyo-name-p',
+
+  calculateCustomersOnce: calculateCustomersOncePotato,
+  calculateCookiesAllHours: calculateCookiesAllHours,
+  renderStore: renderStore
+};
+
+
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-function randomizer(min, max){
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 
 seattleStore.calculateCookiesAllHours();
+seattleStore.renderStore('seattle');
 
+tokyoStore.calculateCookiesAllHours();
+tokyoStore.renderStore('tokyo');
 
