@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>sales</h1>
+
+  <form id="store-form">
+    <fieldset>
+      <legend>New Store</legend>
+      <!-- location name, min customers, max customers, avgSales -->
+
+      <label for="location">location</label>
+      <input type="text" name="location">
+
+      <label for="minCust">minCust</label>
+      <input type="text" name="minCust">
+
+      <label for="maxCust">maxCust</label>
+      <input type="text" name="maxCust">
+
+      <label for="avg-sales">avgSales</label>
+      <input type="text" name="avg-sales">
+
+      <button>Make a new store</button>
+    </fieldset>
+  </form>
+
+  <table id="store-table"></table>
+
+  <script src="app.js"></script>
+</body>
+</html>
