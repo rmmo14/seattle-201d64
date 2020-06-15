@@ -1,5 +1,24 @@
 # A/V, Practical Info, and Getting the Vote Tracker Started
 
+## Feedback week 2
+
+- Readings aren't always directly related to lab
+- Ta's help a ton
+- patience from staff helps a lot
+- I like collaborating on solving problems
+- Ended up happy not being able to work on the next assignment :)
+- How to get help on weekends?
+- Pears
+- What will 301 be like?
+- Book outdated?
+- Ta's stayed late!
+- Salmon flavored cookies...
+- Other things outside school made the week harder
+- I am getting tired
+- What is the purpose of the pace of the class
+- should I have time for other things?
+- Things in the quizzes aren't things we learned
+
 <a id="top"></a>
 
 ## Lecture

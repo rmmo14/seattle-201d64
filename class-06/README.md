@@ -2,6 +2,21 @@
 
 <a id="top"></a>
 
+## Feedback week 1
+
+- tas disconnected
+- reading notes not helpful
+- "I feel stretched, like each day I have maybe one nostril above the water, but by the end of the day, the waterline is just at my mouth"
+- In regards to pair programming and remo in general, I feel like when I try to explain things to someone it helps so much more
+- things are more confusing than my understanding of javascript from before class
+- being taught more than one way at a time is harder than the one right way at a time
+- I love working with my classmates
+- I realized I am not the only one who is lost!
+- There is not enought time to look everything up in lab
+- Nich should verify the "right way" to say code
+- remote after covid
+
+
 ## Lecture
 
 ## Learning Objectives
