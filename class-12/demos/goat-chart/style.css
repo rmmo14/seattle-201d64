@@ -1,0 +1,45 @@
+h1 {
+  width: 300px;
+  margin: 30px auto;
+  font-size: 24px;
+}
+
+div, figure {
+  width: 45%; 
+}
+
+img {
+  width: 100%;
+}
+
+section:first-of-type {
+  position: relative;
+  overflow: hidden;
+}
+section:first-of-type :first-child {
+  margin-right: 70px;
+}
+
+section:first-of-type > * {
+  float: left;
+}
+
+section:first-of-type > p {
+  font-size: 20px;
+  margin: 0 30px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%);
+}
+
+section:nth-of-type(2){
+  height: 200px;
+  width: 50%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+section:nth-of-type(2) h2 {
+font-size: 24px;
+}
